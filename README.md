@@ -1,2 +1,5 @@
 # Microprocessors
-Microprocessors Lab - Spring Semester 2022 - Indian Institute of Technology, Bombay 
+
+## Microprocessors Lab - Spring Semester 2021-2 - Indian Institute of Technology, Bombay 
+
+## Course Instructor - Prof Saravanan Vijayakumaran

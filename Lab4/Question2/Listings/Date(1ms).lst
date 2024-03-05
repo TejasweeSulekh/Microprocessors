@@ -1,0 +1,132 @@
+A51 MACRO ASSEMBLER  DATE_1MS_                                                            02/07/2022 14:17:03 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Date(1ms).obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Date(1ms).a51 SET(SMALL) DEBUG PRINT(.\Listings\Date(1ms).lst) OBJECT(.
+                      \Objects\Date(1ms).obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00h
+0000 020120            2     LJMP MAIN
+0120                   3     ORG 120h
+                       4             
+0120                   5     MAIN:
+                       6     
+0120 755007            7     mov 50h, #07
+0123 755102            8     mov 51h, #02
+0126 755214            9     mov 52h, #20
+0129 755316           10     mov 53h, #22
+                      11     
+012C                  12     Display:
+                      13     
+012C E550             14     mov a, 50h
+012E 75F00A           15     mov b, #10
+0131 84               16     div ab
+0132 C4               17     swap a
+0133 F590             18     mov p1, a
+0135 3183             19     acall delay_200ms
+0137 E5F0             20     mov a, b
+0139 C4               21     swap a
+013A F590             22     mov P1,a
+013C 3183             23     acall delay_200ms
+                      24     
+013E 7590FF           25     mov P1, #0ffffh
+0141 3183             26     acall delay_200ms
+                      27     
+                      28     
+0143 E551             29     mov a, 51h
+0145 75F00A           30     mov b, #10
+0148 84               31     div ab
+0149 C4               32     swap a
+014A F590             33     mov p1, a
+014C 3183             34     acall delay_200ms
+014E E5F0             35     mov a, b
+0150 C4               36     swap a
+0151 F590             37     mov P1,a
+0153 3183             38     acall delay_200ms
+                      39     
+0155 7590FF           40     mov P1, #0ffffh
+0158 3183             41     acall delay_200ms
+                      42     
+015A E552             43     mov a, 52h
+015C 75F00A           44     mov b, #10
+015F 84               45     div ab
+0160 F590             46     mov p1, a
+0162 3183             47     acall delay_200ms
+0164 E5F0             48     mov a, b
+0166 C4               49     swap a
+0167 F590             50     mov P1,a
+0169 3183             51     acall delay_200ms
+                      52     
+016B E553             53     mov a, 53h
+016D 75F00A           54     mov b, #10
+0170 84               55     div ab
+0171 F590             56     mov p1, a
+0173 3183             57     acall delay_200ms
+A51 MACRO ASSEMBLER  DATE_1MS_                                                            02/07/2022 14:17:03 PAGE     2
+
+0175 E5F0             58     mov a, b
+0177 C4               59     swap a
+0178 F590             60     mov P1,a
+017A 3183             61     acall delay_200ms
+                      62     
+017C 7590FF           63     mov P1, #0fffh
+*** __________________________________^
+*** WARNING #A52 IN 63 (Date(1ms).a51, LINE 63): VALUE HAS BEEN TRUNCATED TO 8 BITS
+017F 3183             64     acall delay_200ms
+                      65     
+0181 80A9             66     jmp Display
+                      67     
+0183                  68     delay_200ms:
+0183 C000             69     push 00h
+0185 7814             70     mov r0, #20
+0187 318E             71     h3: acall delay_10ms
+0189 D8FC             72     djnz r0, h3
+018B D000             73     pop 00h
+018D 22               74     ret
+                      75     
+018E                  76     delay_10ms:
+018E C000             77     push 00h
+0190 7820             78     mov r0, #800
+*** __________________________________^
+*** WARNING #A52 IN 78 (Date(1ms).a51, LINE 78): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0192 3199             79     h2: acall delay_250us
+0194 D8FC             80     djnz r0, h2
+0196 D000             81     pop 00h
+0198 22               82     ret
+                      83     
+0199                  84     delay_250us:
+0199 C000             85     push 00h
+019B 78F4             86     mov r0, #244
+019D D8FE             87     h1: djnz r0, h1
+019F D000             88     pop 00h
+01A1 22               89     ret
+                      90     
+                      91     
+                      92     end
+A51 MACRO ASSEMBLER  DATE_1MS_                                                            02/07/2022 14:17:03 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DELAY_10MS . . . .  C ADDR   018EH   A   
+DELAY_200MS. . . .  C ADDR   0183H   A   
+DELAY_250US. . . .  C ADDR   0199H   A   
+DISPLAY. . . . . .  C ADDR   012CH   A   
+H1 . . . . . . . .  C ADDR   019DH   A   
+H2 . . . . . . . .  C ADDR   0192H   A   
+H3 . . . . . . . .  C ADDR   0187H   A   
+MAIN . . . . . . .  C ADDR   0120H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  2 WARNING(S), 0 ERROR(S)

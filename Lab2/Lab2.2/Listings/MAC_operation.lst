@@ -1,0 +1,114 @@
+A51 MACRO ASSEMBLER  MAC_OPERATION                                                        01/24/2022 15:35:07 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\MAC_operation.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE MAC_operation.a51 SET(SMALL) DEBUG PRINT(.\Listings\MAC_operation.lst) 
+                      OBJECT(.\Objects\MAC_operation.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0h
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100h
+0100                   4     MAIN:
+0100 3130              5     CALL MAC
+0102 80FE              6     HERE: SJMP HERE
+0130                   7     ORG 130h
+                       8             
+0130                   9     MAC:
+                      10     
+0130 7570FF           11     mov 70h,#0ffh  
+0133 7571FF           12     mov 71h,#0ffh  
+0136 7572FF           13     mov 72h,#0ffh  
+                      14     
+0139 7573FF           15     mov 73h,#0ffh  
+013C 7574FF           16     mov 74h,#0ffh  
+013F 7575FF           17     mov 75h,#0ffh  
+                      18     
+0142 E570             19     mov A,70h
+0144 8573F0           20     mov B,73h
+                      21     
+0147 A4               22     mul AB  
+0148 F576             23     mov 76h,A
+014A 85F077           24     mov 77h,B  
+                      25     
+014D E571             26     mov A,71h
+014F 8574F0           27     mov B,74h
+                      28     
+0152 A4               29     mul AB
+0153 F578             30     mov 78h,A
+0155 85F079           31     mov 79h,B  
+                      32     
+0158 E572             33     mov A,72h
+015A 8575F0           34     mov B,75h
+                      35     
+015D A4               36     mul AB
+015E F530             37     mov 30h,A
+0160 85F031           38     mov 31h,B  
+                      39     
+0163 857633           40     mov 33h,76h
+0166 857732           41     mov 32h,77h
+0169 857835           42     mov 35h,78h
+016C 857934           43     mov 34h,79h
+                      44     
+016F 319B             45     CALL ADD16
+                      46     
+0171 7400             47     mov A,#00h
+0173 3400             48     addc A, #00h
+0175 F538             49     mov 38h,A
+                      50     
+0177 853639           51     mov 39h,36h  
+017A 85373A           52     mov 3Ah,37h  
+017D 85383B           53     mov 3Bh,38h  
+                      54     
+0180 853933           55     mov 33h,39h
+0183 853A32           56     mov 32h,3Ah
+0186 853035           57     mov 35h,30h
+A51 MACRO ASSEMBLER  MAC_OPERATION                                                        01/24/2022 15:35:07 PAGE     2
+
+0189 853134           58     mov 34h,31h
+                      59     
+018C 319B             60     CALL ADD16
+                      61     
+018E E53B             62     mov A,3bh
+0190 3400             63     addc A,#00h
+0192 F550             64     mov 50H,A
+                      65     
+0194 853652           66     mov 52h,36h
+                      67     
+0197 853751           68     mov 51h,37h
+                      69     
+019A 22               70     RET
+                      71     
+019B                  72     ADD16:
+                      73     
+019B E533             74     mov A,33h
+019D 2535             75     add A,35h
+019F F536             76     mov 36h,A  
+                      77     
+01A1 E532             78     mov A, 32h
+01A3 3534             79     addc A,34h
+01A5 F537             80     mov 37h,A 
+                      81     
+01A7 22               82     RET
+                      83     END
+A51 MACRO ASSEMBLER  MAC_OPERATION                                                        01/24/2022 15:35:07 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ADD16. . . . . . .  C ADDR   019BH   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+MAC. . . . . . . .  C ADDR   0130H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,38 @@
+A51 MACRO ASSEMBLER  ADD16                                                                01/27/2022 17:05:00 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ADD16.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ADD16.a51 SET(SMALL) DEBUG PRINT(.\Listings\ADD16.lst) OBJECT(.\Objects
+                      \ADD16.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+0100                   4     MAIN:
+0100 C3                5     CLR C
+0101 74EB              6     MOV A, #0EBH
+0103                   7     CJNE A, #15H, LABEL
+*** _______________________________________^
+*** ERROR #A45 IN 7 (ADD16.a51, LINE 7): UNDEFINED SYMBOL (PASS-2)
+                       8     
+                       9     
+*** WARNING #A41 IN 9 (ADD16.a51, LINE 9): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  ADD16                                                                01/27/2022 17:05:00 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LABEL. . . . . . .    ----   -----       
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 1 ERROR(S)

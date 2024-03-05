@@ -1,0 +1,3 @@
+".\Objects\Ledtest.obj" 
+TO ".\Objects\Ledtest" 
+PRINT(".\Listings\Ledtest.m51") RAMSIZE(256) 

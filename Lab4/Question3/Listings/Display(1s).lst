@@ -1,0 +1,148 @@
+A51 MACRO ASSEMBLER  DISPLAY_1S_                                                          02/06/2022 17:53:52 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+NO OBJECT MODULE REQUESTED
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Display(1s).a51 SET(SMALL) DEBUG PRINT(.\Listings\Display(1s).lst) OBJE
+                      CT(.\Objects\Display(1s).obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00h
+0000 020120            2     LJMP MAIN
+0120                   3     ORG 120h
+                       4             
+0120                   5     MAIN:
+                       6     
+0120 755019            7     mov 50h, #25
+0123 755106            8     mov 51h, #06
+0126 755213            9     mov 52h, #19
+0129 755353           10     mov 53h, #83
+                      11     
+012C                  12     display:
+                      13     
+012C E550             14     mov a, 50h
+012E 75F00A           15     mov b, #10
+0131 84               16     div ab
+0132 C4               17     swap a
+0133 F590             18     mov p1, a
+0135 3192             19     acall delay_200ms
+0137 85F060           20     mov 60h, b
+013A                  21     swap 60h
+*** ______________________________^
+*** ERROR #A39 IN 21 (Display(1s).a51, LINE 21): REGISTER OPERAND EXPECTED
+013A 856090           22     mov P1,60h
+013D 3192             23     acall delay_200ms
+                      24     
+013F 7590FF           25     mov P1, #0ffffh
+0142 3192             26     acall delay_200ms
+                      27     
+                      28     
+0144 E551             29     mov a, 51h
+0146 75F00A           30     mov b, #10
+0149 84               31     div ab
+014A C4               32     swap a
+014B F590             33     mov p1, a
+014D 3192             34     acall delay_200ms
+014F 85F060           35     mov 60h, b
+0152                  36     swap 60h
+*** ______________________________^
+*** ERROR #A39 IN 36 (Display(1s).a51, LINE 36): REGISTER OPERAND EXPECTED
+0152 856090           37     mov P1,60h
+0155 3192             38     acall delay_200ms
+                      39     
+0157 7590FF           40     mov P1, #0ffffh
+015A 3192             41     acall delay_200ms
+                      42     
+015C E552             43     mov a, 52h
+015E 75F00A           44     mov b, #10
+0161 84               45     div ab
+0162 F590             46     mov p1, a
+0164 3192             47     acall delay_200ms
+0166 85F060           48     mov 60h, b
+0169                  49     swap 60h
+*** ______________________________^
+*** ERROR #A39 IN 49 (Display(1s).a51, LINE 49): REGISTER OPERAND EXPECTED
+0169 856090           50     mov P1,60h
+016C 3192             51     acall delay_200ms
+A51 MACRO ASSEMBLER  DISPLAY_1S_                                                          02/06/2022 17:53:52 PAGE     2
+
+                      52     
+016E E553             53     mov a, 53h
+0170 75F00A           54     mov b, #10
+0173 84               55     div ab
+0174 F590             56     mov p1, a
+0176 3192             57     acall delay_200ms
+0178 85F060           58     mov 60h, b
+017B                  59     swap 60h
+*** ______________________________^
+*** ERROR #A39 IN 59 (Display(1s).a51, LINE 59): REGISTER OPERAND EXPECTED
+017B 856090           60     mov P1,60h
+017E 3192             61     acall delay_200ms
+                      62     
+0180 7590FF           63     mov P1, #0fffh
+*** __________________________________^
+*** WARNING #A52 IN 63 (Display(1s).a51, LINE 63): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0183 3192             64     acall delay_200ms
+                      65     
+0185 80A5             66     jmp display
+                      67     
+0187                  68     delay_1s:
+0187 C000             69     push 00h
+0189 7805             70     mov r0, #5
+018B 3192             71     h4: acall delay_200ms
+018D D8FC             72     djnz r0, h4
+018F D000             73     pop 00h
+0191 22               74     ret
+                      75     
+0192                  76     delay_200ms:
+0192 C000             77     push 00h
+0194 7814             78     mov r0, #20
+0196 319D             79     h3: acall delay_10ms
+0198 D8FC             80     djnz r0, h3
+019A D000             81     pop 00h
+019C 22               82     ret
+                      83     
+019D                  84     delay_10ms:
+019D C000             85     push 00h
+019F 7828             86     mov r0, #40
+01A1 31A8             87     h2: acall delay_250us
+01A3 D8FC             88     djnz r0, h2
+01A5 D000             89     pop 00h
+01A7 22               90     ret
+                      91     
+01A8                  92     delay_250us:
+01A8 C000             93     push 00h
+01AA 78F4             94     mov r0, #244
+01AC D8FE             95     h1: djnz r0, h1
+01AE D000             96     pop 00h
+01B0 22               97     ret
+                      98     
+                      99     
+                     100     end
+A51 MACRO ASSEMBLER  DISPLAY_1S_                                                          02/06/2022 17:53:52 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DELAY_10MS . . . .  C ADDR   019DH   A   
+DELAY_1S . . . . .  C ADDR   0187H   A   
+DELAY_200MS. . . .  C ADDR   0192H   A   
+DELAY_250US. . . .  C ADDR   01A8H   A   
+DISPLAY. . . . . .  C ADDR   012CH   A   
+H1 . . . . . . . .  C ADDR   01ACH   A   
+H2 . . . . . . . .  C ADDR   01A1H   A   
+H3 . . . . . . . .  C ADDR   0196H   A   
+H4 . . . . . . . .  C ADDR   018BH   A   
+MAIN . . . . . . .  C ADDR   0120H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 4 ERROR(S)

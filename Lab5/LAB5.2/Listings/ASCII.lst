@@ -1,0 +1,68 @@
+A51 MACRO ASSEMBLER  ASCII                                                                02/13/2022 23:33:35 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ASCII.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ASCII.a51 SET(SMALL) DEBUG PRINT(.\Listings\ASCII.lst) OBJECT(.\Objects
+                      \ASCII.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020030            2             LJMP MAIN
+                       3     
+0030                   4     ORG 030H
+0030 E530              5     MAIN:  MOV A,30H         ; move the numbers to be converted
+0032 75F010            6            MOV B,#10H
+0035 84                7            DIV AB
+0036 B40A08            8            CJNE A,#0AH,STAGE1 ; compare the number with A
+0039 1159              9                ACALL LABEL2
+003B F560             10                MOV 60H,A
+003D E5F0             11                MOV A,B
+003F 800B             12                JMP STAGE2
+                      13               
+                      14                 
+0041 1152             15     STAGE1: ACALL CHECK
+0043 F560             16         MOV 60H,A
+0045 E5F0             17         MOV A,B
+0047 B40A02           18             CJNE A,#0AH,STAGE2
+004A 800D             19             JMP LABEL2
+                      20             
+004C                  21     STAGE2:
+004C 1152             22             ACALL CHECK
+004E F561             23             MOV 61H,A
+0050 80FE             24             HERE : SJMP HERE
+                      25             
+0052 5005             26     CHECK: JNC LABEL2
+0054 4000             27            JC  LABEL1
+                      28                
+0056 2430             29     LABEL1:ADD A,#30H          ; If the number is lesser than A add with 30H
+0058 22               30            RET
+                      31                
+0059 2437             32     LABEL2:ADD A,#37H          ;If the number is greater than A add with 37H
+005B 22               33            RET
+005C                  34     STOP:
+                      35            END
+A51 MACRO ASSEMBLER  ASCII                                                                02/13/2022 23:33:35 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+CHECK. . . . . . .  C ADDR   0052H   A   
+HERE . . . . . . .  C ADDR   0050H   A   
+LABEL1 . . . . . .  C ADDR   0056H   A   
+LABEL2 . . . . . .  C ADDR   0059H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+STAGE1 . . . . . .  C ADDR   0041H   A   
+STAGE2 . . . . . .  C ADDR   004CH   A   
+STOP . . . . . . .  C ADDR   005CH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

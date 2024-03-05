@@ -1,0 +1,3 @@
+".\Objects\Sqwave.obj" 
+TO ".\Objects\Sqwave" 
+PRINT(".\Listings\Sqwave.m51") RAMSIZE(256) 

@@ -1,0 +1,79 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/13/2022  12:11:00  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Sqwave.obj TO .\Objects\Sqwave PRINT (.\Listings\Sqwave.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Sqwave.obj (SQWAVE)
+
+
+LINK MAP OF MODULE:  .\Objects\Sqwave (SQWAVE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0133H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Sqwave (SQWAVE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SQWAVE
+  C:011CH         SYMBOL        CLK
+  C:0100H         SYMBOL        CYCLE1
+  C:010DH         SYMBOL        CYCLE2
+  C:0116H         SYMBOL        DELAY
+  C:012EH         SYMBOL        LOOP
+  C:011EH         SYMBOL        LOOP1
+  C:0100H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  B:0088H.5       SYMBOL        TF0
+  D:008CH         SYMBOL        TH0
+  C:0123H         SYMBOL        TIMER
+  D:008AH         SYMBOL        TL0
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  C:0000H         LINE#         2
+  C:0100H         LINE#         8
+  C:0103H         LINE#         9
+  C:0106H         LINE#         10
+  C:0108H         LINE#         11
+  C:010AH         LINE#         12
+  C:010DH         LINE#         15
+  C:010FH         LINE#         16
+  C:0111H         LINE#         17
+  C:0114H         LINE#         18
+  C:0116H         LINE#         21
+  C:0119H         LINE#         22
+  C:011BH         LINE#         23
+  C:011CH         LINE#         26
+  C:011EH         LINE#         28
+  C:0120H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/13/2022  12:11:00  PAGE 2
+
+
+  C:0122H         LINE#         30
+  C:0123H         LINE#         34
+  C:0126H         LINE#         35
+  C:0129H         LINE#         36
+  C:012CH         LINE#         37
+  C:012EH         LINE#         39
+  C:0131H         LINE#         40
+  -------         ENDMOD        SQWAVE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0036H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=307
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

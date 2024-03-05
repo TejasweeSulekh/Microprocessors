@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\Keyboard" 
+PRINT(".\Listings\Keyboard.m51") RAMSIZE(256) 

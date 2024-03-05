@@ -1,0 +1,113 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/06/2022  17:38:16  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Display(1s).obj TO .\Objects\Display(1s) PRINT (.\Listings\Display(1s).m51) RAMSIZ
+>> E (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Display(1s).obj (DISPLAY_1S_)
+
+
+LINK MAP OF MODULE:  .\Objects\Display(1s) (DISPLAY_1S_)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0197H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Display(1s) (DISPLAY_1S_)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DISPLAY_1S_
+  C:0183H         SYMBOL        DELAY_10MS
+  C:016DH         SYMBOL        DELAY_1S
+  C:0178H         SYMBOL        DELAY_200MS
+  C:018EH         SYMBOL        DELAY_250US
+  C:012CH         SYMBOL        DISPLAY
+  C:0192H         SYMBOL        H1
+  C:0187H         SYMBOL        H2
+  C:017CH         SYMBOL        H3
+  C:0171H         SYMBOL        H4
+  C:0120H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:0000H         LINE#         2
+  C:0120H         LINE#         7
+  C:0123H         LINE#         8
+  C:0126H         LINE#         9
+  C:0129H         LINE#         10
+  C:012CH         LINE#         14
+  C:012FH         LINE#         15
+  C:0131H         LINE#         16
+  C:0133H         LINE#         17
+  C:0134H         LINE#         18
+  C:0136H         LINE#         19
+  C:0138H         LINE#         21
+  C:013BH         LINE#         22
+  C:013DH         LINE#         25
+  C:0140H         LINE#         26
+  C:0142H         LINE#         27
+  C:0144H         LINE#         28
+  C:0145H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/06/2022  17:38:16  PAGE 2
+
+
+  C:0147H         LINE#         30
+  C:0149H         LINE#         32
+  C:014CH         LINE#         33
+  C:014EH         LINE#         35
+  C:0151H         LINE#         36
+  C:0153H         LINE#         37
+  C:0155H         LINE#         38
+  C:0156H         LINE#         39
+  C:0158H         LINE#         40
+  C:015AH         LINE#         42
+  C:015DH         LINE#         43
+  C:015FH         LINE#         44
+  C:0161H         LINE#         45
+  C:0162H         LINE#         46
+  C:0164H         LINE#         47
+  C:0166H         LINE#         49
+  C:0169H         LINE#         50
+  C:016BH         LINE#         52
+  C:016DH         LINE#         55
+  C:016FH         LINE#         56
+  C:0171H         LINE#         57
+  C:0173H         LINE#         58
+  C:0175H         LINE#         59
+  C:0177H         LINE#         60
+  C:0178H         LINE#         63
+  C:017AH         LINE#         64
+  C:017CH         LINE#         65
+  C:017EH         LINE#         66
+  C:0180H         LINE#         67
+  C:0182H         LINE#         68
+  C:0183H         LINE#         71
+  C:0185H         LINE#         72
+  C:0187H         LINE#         73
+  C:0189H         LINE#         74
+  C:018BH         LINE#         75
+  C:018DH         LINE#         76
+  C:018EH         LINE#         79
+  C:0190H         LINE#         80
+  C:0192H         LINE#         81
+  C:0194H         LINE#         82
+  C:0196H         LINE#         83
+  -------         ENDMOD        DISPLAY_1S_
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 007AH BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=407
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

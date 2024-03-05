@@ -1,0 +1,80 @@
+A51 MACRO ASSEMBLER  SQWAVE                                                               03/13/2022 12:11:00 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Sqwave.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Sqwave.a51 SET(SMALL) DEBUG PRINT(.\Listings\Sqwave.lst) OBJECT(.\Objec
+                      ts\Sqwave.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0h
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+                       4         
+                       5             
+0100                   6     MAIN:
+0100                   7     CYCLE1:
+0100 759000            8         MOV P1, #00H
+0103 753002            9         MOV 30H, #2H
+0106 A830             10             MOV R0, 30H
+0108 D297             11             SETB P1.7       
+010A 120116           12             LCALL DELAY
+                      13             
+010D                  14     CYCLE2:
+010D A830             15             MOV R0, 30H
+010F C297             16             CLR P1.7
+0111 120116           17             LCALL DELAY
+0114 80EA             18             SJMP MAIN
+                      19             
+0116                  20     DELAY:  
+0116 12011C           21             LCALL CLK
+0119 D8FB             22             DJNZ R0, DELAY 
+011B 22               23             RET
+                      24             
+011C                  25     CLK:
+011C 7902             26             MOV R1,#02H
+011E                  27     LOOP1:  
+011E C28D             28         CLR TF0
+0120 D901             29         DJNZ R1, TIMER
+0122 22               30             RET
+                      31             
+0123                  32     TIMER:  
+                      33     
+0123 758901           34         MOV TMOD, #01H
+0126 758CFA           35             MOV TH0, #0FAH
+0129 758AD4           36             MOV TL0, #0D4H
+012C D28C             37         SETB TR0
+                      38     
+012E 308DFD           39     LOOP: JNB TF0, LOOP
+0131 80EB             40         JMP LOOP1
+                      41             
+*** WARNING #A41 IN 41 (Sqwave.a51, LINE 41): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  SQWAVE                                                               03/13/2022 12:11:00 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CLK. . . . . . . .  C ADDR   011CH   A   
+CYCLE1 . . . . . .  C ADDR   0100H   A   
+CYCLE2 . . . . . .  C ADDR   010DH   A   
+DELAY. . . . . . .  C ADDR   0116H   A   
+LOOP . . . . . . .  C ADDR   012EH   A   
+LOOP1. . . . . . .  C ADDR   011EH   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER. . . . . . .  C ADDR   0123H   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)

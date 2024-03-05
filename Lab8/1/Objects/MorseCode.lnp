@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\MorseCode.obj" 
+TO ".\Objects\MorseCode" 
+PRINT(".\Listings\MorseCode.m51") RAMSIZE(256) 

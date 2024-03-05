@@ -1,0 +1,44 @@
+A51 MACRO ASSEMBLER  BINSEARCH                                                            02/04/2022 16:59:37 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\BinSearch.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE BinSearch.a51 SET(SMALL) DEBUG PRINT(.\Listings\BinSearch.lst) OBJECT(.
+                      \Objects\BinSearch.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0h 
+0000 1102              2     call delay_1ms
+0002                   3     delay_1ms:
+0002 C000              4     push 00h
+0004 7804              5     mov r0, #4
+0006 110D              6     h2: call delay_250us
+0008 D8FC              7     djnz r0, h2
+000A D000              8     pop 00h
+000C 22                9     ret
+000D                  10     delay_250us:
+000D C000             11     push 00h
+000F 78F4             12     mov r0, #244
+0011 D8FE             13     h1: djnz r0, h1
+0013 D000             14     pop 00h
+0015 22               15     ret
+*** WARNING #A41 IN 15 (BinSearch.a51, LINE 15): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  BINSEARCH                                                            02/04/2022 16:59:37 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY_1MS. . . . .  C ADDR   0002H   A   
+DELAY_250US. . . .  C ADDR   000DH   A   
+H1 . . . . . . . .  C ADDR   0011H   A   
+H2 . . . . . . . .  C ADDR   0006H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)

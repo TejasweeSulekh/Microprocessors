@@ -1,0 +1,3 @@
+".\Objects\Levels.obj" 
+TO ".\Objects\Levels" 
+PRINT(".\Listings\Levels.m51") RAMSIZE(256) 

@@ -1,0 +1,4 @@
+".\Objects\ASCII.obj",
+".\Objects\LAB5_20D070082_2.obj" 
+TO ".\Objects\ASCII" 
+PRINT(".\Listings\ASCII.m51") RAMSIZE(256) 
